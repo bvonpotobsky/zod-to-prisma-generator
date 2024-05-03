@@ -1,16 +1,15 @@
 {
-	"name": "zod-prisma",
+	"name": "prisma-to-zod-generator",
 	"version": "0.5.4",
 	"description": "A Prisma generator that creates Zod schemas for all of your models",
-	"license": "MIT",
-	"author": "Carter Grimmeisen",
-	"homepage": "https://github.com/CarterGrimmeisen/zod-prisma#readme",
+	"license": "UNLICENSED",
+	"homepage": "https://github.com/bvonpotobsky/zod-to-prisma-generator#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/CarterGrimmeisen/zod-prisma.git"
+		"url": "https://github.com/bvonpotobsky/zod-to-prisma-generator.git"
 	},
 	"bugs": {
-		"url": "https://github.com/CarterGrimmeisen/zod-prisma/issues"
+		"url": "https://github.com/bvonpotobsky/zod-to-prisma-generator/issues"
 	},
 	"main": "dist/index.js",
 	"module": "dist/zod-prisma.esm.js",
