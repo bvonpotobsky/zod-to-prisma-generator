@@ -21,6 +21,7 @@ export const getZodDocElements = (docString: string) =>
 	docString
 		.split('\n')
 		.filter((line) => line.trimStart().startsWith('@zod'))
+		.filter((line) => !line.includes('@zod.ignore'))
 		.map((line) => line.trimStart().slice(4))
 		.flatMap((line) =>
 			// Array.from(line.matchAll(/\.([^().]+\(.*?\))/g), (m) => m.slice(1)).flat()
