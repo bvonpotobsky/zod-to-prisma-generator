@@ -22,7 +22,7 @@ export const writeImportsForModel = (
 		{
 			kind: StructureKind.ImportDeclaration,
 			namespaceImport: 'z',
-			moduleSpecifier: '@mpi/zod',
+			moduleSpecifier: 'zod',
 		},
 	]
 
