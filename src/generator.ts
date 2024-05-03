@@ -7,7 +7,7 @@ import {
 	VariableDeclarationKind,
 } from 'ts-morph'
 import { Config, PrismaOptions } from './config'
-import { dotSlash, needsRelatedModel, useModelNames, writeArray } from './util'
+import { dotSlash, needsRelatedModel, shouldIgnoreField, useModelNames, writeArray } from './util'
 import { getJSDocs } from './docs'
 import { getZodConstructor } from './types'
 
@@ -22,7 +22,7 @@ export const writeImportsForModel = (
 		{
 			kind: StructureKind.ImportDeclaration,
 			namespaceImport: 'z',
-			moduleSpecifier: 'zod',
+			moduleSpecifier: '@mpi/zod',
 		},
 	]
 
@@ -145,6 +145,7 @@ export const generateSchemaForModel = (
 						.inlineBlock(() => {
 							model.fields
 								.filter((f) => f.kind !== 'object')
+								.filter((f) => f.kind !== 'object' && !shouldIgnoreField(f))
 								.forEach((field) => {
 									writeArray(writer, getJSDocs(field.documentation))
 									writer

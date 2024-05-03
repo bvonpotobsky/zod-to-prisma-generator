@@ -45,3 +45,8 @@ export const dotSlash = (input: string) => {
 
 	return './' + converted
 }
+
+// Helper function to determine if a field should be ignored
+export function shouldIgnoreField(field: DMMF.Field): boolean {
+	return field.documentation ? field.documentation.includes('@zod.ignore()') : false
+}
